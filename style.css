@@ -317,7 +317,7 @@ font-family: var(--main-font);
     margin:-120px auto 0 !important;  /* !important внутри свойства */
   }   
   .congrats-text {  
-    margin-top: -350px !important;      /* тоже с !important */
+    margin-top: -370px !important;      /* тоже с !important */
   }
 }
 
