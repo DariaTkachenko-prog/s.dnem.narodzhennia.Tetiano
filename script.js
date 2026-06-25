@@ -13,6 +13,7 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
+
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
@@ -27,6 +28,7 @@
 
   function createPieces() {
     pieces = [];
+
     for (let i = 0; i < pieceCount; i++) {
       pieces.push({
         x: randomRange(0, canvas.width),
@@ -35,7 +37,7 @@
         rotation: randomRange(0, 2 * Math.PI),
         rotationSpeed: randomRange(-0.05, 0.05),
         color: colors[Math.floor(Math.random() * colors.length)],
-speed: randomRange(2, 5),
+        speed: randomRange(2, 5),
         swing: randomRange(0.5, 2.5),
         alpha: 1
       });
@@ -44,7 +46,7 @@ speed: randomRange(2, 5),
 
   let running = false;
   let startTs = 0;
-  const DURATION = 5500; // тривалість конфеті ~4.2 секунди
+  const DURATION = 3200; // тривалість конфеті ~4.2 секунди
 
   function drawPiece(p) {
     ctx.save();
@@ -52,7 +54,7 @@ speed: randomRange(2, 5),
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rotation);
     ctx.fillStyle = p.color;
-    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6); // прямокутник як "конфеті"
+    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
     ctx.restore();
   }
 
@@ -60,6 +62,7 @@ speed: randomRange(2, 5),
     p.y += p.speed;
     p.x += Math.sin((p.y + startTs) * 0.01) * p.swing;
     p.rotation += p.rotationSpeed;
+
     if (p.y > canvas.height + 20) {
       p.y = -20;
       p.x = randomRange(0, canvas.width);
@@ -71,7 +74,9 @@ speed: randomRange(2, 5),
     if (!startTs) startTs = ts;
 
     const elapsed = ts - startTs;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     for (const p of pieces) {
       updatePiece(p, elapsed);
       drawPiece(p);
@@ -81,21 +86,26 @@ speed: randomRange(2, 5),
       requestAnimationFrame(animateConfetti);
     } else {
       // Плавно згасити
-      fadeOutConfetti(2000);
+      fadeOutConfetti(800);
     }
   }
 
   function fadeOutConfetti(ms) {
-    const steps = 60;
+    const steps = 30;
     let step = 0;
+
     const interval = setInterval(() => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       const alpha = 1 - step / steps;
       ctx.globalAlpha = alpha;
+
       for (const p of pieces) {
         drawPiece({ ...p, alpha });
       }
+
       step++;
+
       if (step > steps) {
         clearInterval(interval);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -107,11 +117,11 @@ speed: randomRange(2, 5),
 
   function revealCongrats() {
     congrats.classList.remove('hidden');
-    // невелика попередня позиція для плавної появи
     congrats.classList.add('show-dissolve');
 
     // Поступово показуємо рядки привітання
     const lines = document.querySelectorAll('.congrats-text .line');
+
     lines.forEach((line, i) => {
       setTimeout(() => line.classList.add('visible'), 250 + i * 250);
     });
@@ -120,11 +130,19 @@ speed: randomRange(2, 5),
   function startExperience() {
     // Приховати кульку і підказку
     balloon.classList.add('hidden');
-    if (hint) hint.classList.add('hidden');
+
+    if (hint) {
+      hint.classList.add('hidden');
+    }
 
     // Звук + музика
-    try { openSound && openSound.play(); } catch (e) {}
-    try { bgMusic && bgMusic.play(); } catch (e) {}
+    try {
+      openSound && openSound.play();
+    } catch (e) {}
+
+    try {
+      bgMusic && bgMusic.play();
+    } catch (e) {}
 
     // Конфеті
     createPieces();
@@ -138,7 +156,10 @@ speed: randomRange(2, 5),
 
   // Події
   balloon.addEventListener('click', startExperience);
+
   balloon.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') startExperience();
+    if (e.key === 'Enter' || e.key === ' ') {
+      startExperience();
+    }
   });
 })();
