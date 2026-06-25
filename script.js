@@ -81,7 +81,7 @@
       requestAnimationFrame(animateConfetti);
     } else {
       // Плавно згасити
-      fadeOutConfetti(800);
+      fadeOutConfetti(2000);
     }
   }
 
