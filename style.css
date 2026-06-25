@@ -314,7 +314,7 @@ font-family: var(--main-font);
 /* На мобильных: фото ниже, текст выше, чтобы не налезали на шарик */
 @media (max-width: 768px){
   .congrats-photo { 
-    margin:-120px auto 0 !important;  /* !important внутри свойства */
+    margin:-110px auto 0 !important;  /* !important внутри свойства */
   }   
   .congrats-text {  
     margin-top: -370px !important;      /* тоже с !important */
