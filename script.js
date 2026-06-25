@@ -44,7 +44,7 @@
 
   let running = false;
   let startTs = 0;
-  const DURATION = 3200; // тривалість конфеті ~4.2 секунди
+  const DURATION = 4500; // тривалість конфеті ~4.2 секунди
 
   function drawPiece(p) {
     ctx.save();
