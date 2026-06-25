@@ -86,7 +86,7 @@
   }
 
   function fadeOutConfetti(ms) {
-    const steps = 30;
+    const steps = 60;
     let step = 0;
     const interval = setInterval(() => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
