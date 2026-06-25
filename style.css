@@ -283,7 +283,7 @@ h1 {
     max-width: 100% !important;
   }
 
-  .signature { font-size: 0.95rem !important; margin-top: 8px !important; }
+  .signature { font-size: 0.95rem !important; margin-top: -12px !important; }
 }
 
 
