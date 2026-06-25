@@ -314,7 +314,7 @@ h1 {
 /* На мобильных: фото ниже, текст выше, чтобы не налезали на шарик */
 @media (max-width: 768px){
   .congrats-photo { 
-    margin: -80px auto 0 !important;  /* !important внутри свойства */
+    margin: -100px auto 0 !important;  /* !important внутри свойства */
   }   
   .congrats-text {  
     margin-top: -350px !important;      /* тоже с !important */
