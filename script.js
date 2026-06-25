@@ -35,7 +35,7 @@
         rotation: randomRange(0, 2 * Math.PI),
         rotationSpeed: randomRange(-0.05, 0.05),
         color: colors[Math.floor(Math.random() * colors.length)],
-      speed: randomRange(1.8, 4.2),
+speed: randomRange(2, 5),
         swing: randomRange(0.5, 2.5),
         alpha: 1
       });
