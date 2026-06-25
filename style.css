@@ -160,7 +160,7 @@ font-family: var(--main-font);
   font-size: 1.1rem;
   color: #2E003E;
   margin-top: 30px;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInSignature 0.8s ease forwards;
