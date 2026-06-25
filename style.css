@@ -316,9 +316,10 @@ font-family: var(--main-font);
   .congrats-photo { 
     margin:-110px auto 0 !important;  /* !important внутри свойства */
   }   
-  .congrats-text {  
-    margin-top: -370px !important;      /* тоже с !important */
-  }
+  .congrats-text p {
+    font-size: 0.98rem !important;
+    line-height: 1 !important;
+}
 }
 
 /* === Запрет вертикального скролла на ПК === */
