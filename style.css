@@ -277,13 +277,13 @@ h1 {
   #smiley {
     position: relative !important;
     z-index: 20 !important;   /* ниже кнопки (кнопка z-index:30) */
-    margin-top: 90px !important;
+    margin-top:120px !important;
     margin-bottom: 48px !important;
     width: 280px !important;  /* чтобы не плясал при разных ширинах */
     max-width: 100% !important;
   }
 
-  .signature { font-size: 0.95rem !important; margin-top: 16px !important; }
+  .signature { font-size: 0.95rem !important; margin-top:-12px !important; }
 }
 
 
@@ -314,7 +314,7 @@ h1 {
 /* На мобильных: фото ниже, текст выше, чтобы не налезали на шарик */
 @media (max-width: 768px){
   .congrats-photo { 
-    margin: -70px auto 0 !important;  /* !important внутри свойства */
+    margin:-120px auto 0 !important;  /* !important внутри свойства */
   }   
   .congrats-text {  
     margin-top: -350px !important;      /* тоже с !important */
@@ -336,7 +336,7 @@ h1 {
   }
 
   .h1-line.line2 {
-    font-size: 1.2rem !important; /* было 1.4rem */
+    font-size: 1rem !important; /* было 1.4rem */
     line-height: 1.2;
   }
 }
